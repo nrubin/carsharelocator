@@ -1,0 +1,4 @@
+ENV/
+scraping/
+*.pyc
+.DS_Store
