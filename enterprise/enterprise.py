@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from time import sleep
 
-chrome_path = r"/Users/noam/Projects/carshare/scraping/chromedriver"
+chrome_path = r"/Users/noam/Projects/carsharelocator/scraping/chromedriver"
 options = webdriver.ChromeOptions()
 # prefs = {"profile.default_content_setting_values.geolocation" :2}
 # options.add_experimental_option("prefs",prefs)
@@ -49,7 +49,7 @@ while next_button_appeared:
     print "sleeping for 20 seconds "
     sleep(20)
     print "scraping this page"
-    driver.execute_script(open("./list_parse.js","r").read())
+    driver.execute_script(open("/Users/noam/Projects/carsharelocator/enterprise/list_parse.js","r").read())
     list_data = driver.execute_script("return data;")    
     car_lists.append(list_data)
     page_count += 1
@@ -76,7 +76,7 @@ print car_lists
 # driver.find_element_by_css_selector("div#rightCol > div#header > ul > li > a[onclick*='map']").click()
 # sleep(20)
 # try:
-#     driver.execute_script(open("./map_parse.js","r").read())
+#     driver.execute_script(open("/Users/noam/Projects/carsharelocator/enterprise/map_parse.js","r").read())
 # except:
 #     pass
 # gps_data = driver.execute_script("return gps_data;")
